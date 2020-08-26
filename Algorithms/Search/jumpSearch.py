@@ -1,5 +1,5 @@
 '''
-    Algo: Binary Search
+    Algo: Jump Search
     Type: Searching
 
     Time-Complexity: 
