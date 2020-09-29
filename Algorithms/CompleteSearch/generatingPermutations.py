@@ -23,4 +23,6 @@ def generatingPermutations(arr: List[int], perm: List[int], chosen: List[bool]):
             perm.pop()
 
 
-generatingPermutations([1, 2, 3], [], [False]*3)
+arr = [1,2,3]
+chosen = [False]*len(arr)
+generatingPermutations(arr, [], chosen)
