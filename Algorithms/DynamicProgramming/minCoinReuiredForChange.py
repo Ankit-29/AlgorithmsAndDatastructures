@@ -7,7 +7,6 @@ from typing import List
 
 memo = {}
 def minCoinRequired(coins: List[int], n: int) -> int:
-    print(memo)
     if(n < 0):
         return float('inf')
     if(n == 0):
@@ -24,7 +23,19 @@ def minCoinRequired(coins: List[int], n: int) -> int:
 
     return minimum
 
+def minCoinRequiredIterative(coins: List[int], n: int) -> int:
+    dp = [float('inf')]*(n+1)
+    dp[0] = 0
+    for x in range(1,n+1):
+        for coin in coins:
+            if(x-coin >= 0):
+                dp[x] = min(dp[x],dp[x-coin]+1)
+            print(x,dp)
+    return dp[n]
+
 
 coins = [1, 2, 5, 10, 20, 50, 100, 200, 500, 2000]
-n = 200
-print(minCoinRequired(coins, n))
+n = 10
+# print(minCoinRequired(coins, n))
+print(minCoinRequiredIterative(coins, n))
+
